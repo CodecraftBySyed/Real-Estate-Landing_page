@@ -1,0 +1,1238 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Luxury Real Estate Agency - Find your dream home with us. Responsive, modern, and accessible."
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="assets/apple-touch-icon.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="assets/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="assets/favicon-16x16.png"
+    />
+    <link rel="manifest" href="assets/site.webmanifest" />
+    <title>Luxury Real Estate Agency</title>
+    <!-- Tailwind CSS CDN with Inter font for modern look -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <script>
+      tailwind = window.tailwind || {};
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ["Inter", "ui-sans-serif", "system-ui"],
+            },
+          },
+        },
+      };
+    </script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- AOS CSS -->
+    <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet" />
+    <!-- Custom CSS for dark mode overrides -->
+    <link href="css/custom.css" rel="stylesheet" />
+    <!-- Favicon -->
+    <link rel="icon" href="data:;base64,iVBORw0KGgo=" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+  </head>
+  <body
+    class="bg-white text-gray-900 dark:bg-gray-900 dark:text-white transition-colors duration-500 min-h-screen"
+  >
+    <!-- Navbar -->
+    <nav
+      class="sticky top-0 z-50 bg-white/80 dark:bg-gray-950/90 backdrop-blur-md shadow-md border-b border-gray-200 dark:border-gray-800 transition-colors duration-500"
+    >
+      <div
+        class="max-w-7xl mx-auto flex items-center justify-between px-4 py-3"
+      >
+        <!-- Logo + Brand -->
+        <div class="flex items-center gap-3">
+          <img
+            src="assets/logo.jpg"
+            alt="Agency Logo"
+            class="h-10 w-10 md:h-12 md:w-12 rounded-full object-cover shadow-md ring-2 ring-[#1e40af] dark:ring-[#d4af37] transition"
+          />
+          <span
+            class="font-extrabold text-xl md:text-2xl tracking-tight text-transparent bg-clip-text bg-gradient-to-r from-[#1e40af] to-[#d4af37] dark:from-[#d4af37] dark:to-[#1e40af] drop-shadow select-none"
+          >
+            LuxEstate
+          </span>
+        </div>
+
+        <!-- Mobile menu button -->
+        <button
+          id="nav-toggle"
+          class="md:hidden p-2 rounded-lg focus:outline-none bg-white/60 dark:bg-gray-800/80 border border-gray-300 dark:border-gray-700 hover:bg-[#1e40af]/10 dark:hover:bg-[#d4af37]/10 transition"
+          aria-label="Toggle menu"
+        >
+          <svg
+            class="h-6 w-6 text-[#1e40af] dark:text-[#d4af37]"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M4 6h16M4 12h16M4 18h16"
+            />
+          </svg>
+        </button>
+
+        <!-- Navigation Links -->
+        <ul
+          id="nav-menu"
+          class="hidden md:flex gap-6 items-center text-base font-medium absolute md:static top-full left-0 w-full md:w-auto bg-white dark:bg-gray-950 md:bg-transparent md:dark:bg-transparent shadow-lg md:shadow-none rounded-b-xl md:rounded-none py-4 md:py-0 transition-all duration-300 backdrop-blur-lg md:backdrop-blur-0 border-t md:border-none"
+        >
+          <li>
+            <a href="#home" class="nav-link">Home</a>
+          </li>
+          <li>
+            <a href="#listings" class="nav-link">Listings</a>
+          </li>
+          <li>
+            <a href="#about" class="nav-link">About</a>
+          </li>
+          <li>
+            <a href="#contact" class="nav-link">Contact</a>
+          </li>
+        </ul>
+
+        <!-- Dark/Light Toggle -->
+        <button
+          id="theme-toggle"
+          class="ml-4 p-2 rounded-full bg-white/70 dark:bg-gray-800 hover:bg-[#1e40af] dark:hover:bg-[#d4af37] text-[#1e40af] dark:text-[#d4af37] hover:text-white dark:hover:text-black border border-gray-300 dark:border-gray-700 transition focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#1e40af] dark:focus:ring-[#d4af37]"
+          aria-label="Toggle Dark Mode"
+        >
+          <svg
+            id="theme-icon"
+            class="h-6 w-6"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+            aria-hidden="true"
+          >
+            <!-- Icon is set dynamically by JS -->
+          </svg>
+        </button>
+      </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section
+      id="home"
+      class="relative flex items-center justify-center bg-cover bg-center min-h-[60vh] sm:min-h-[70vh] md:min-h-[80vh] hero-bg"
+      style="background-image: url('/images/bg.jpg')"
+    >
+      <!-- Overlay -->
+      <div
+        class="absolute inset-0 bg-gradient-to-b from-black/70 to-[#1e40af]/80 dark:from-gray-900/90 dark:to-black/90"
+      ></div>
+
+      <!-- Content -->
+      <div
+        class="relative z-10 text-center text-white max-w-xl sm:max-w-2xl mx-auto px-4 py-8 sm:py-12"
+        data-aos="fade-up"
+      >
+        <h1
+          class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold mb-4 leading-tight"
+        >
+          <span id="typed-text"></span
+          ><span id="typed-cursor" class="text-[#d4af37]">|</span>
+        </h1>
+        <p class="text-base sm:text-lg md:text-2xl mb-8">
+          Luxury properties, trusted agents, and a seamless experience.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+          <a
+            href="#contact"
+            class="bg-[#d4af37] text-[#1e40af] font-semibold px-6 py-3 rounded shadow hover:bg-[#1e40af] hover:text-[#d4af37] transition text-base sm:text-lg"
+            >Schedule a Visit</a
+          >
+          <a
+            href="#listings"
+            class="bg-white/80 text-[#1e40af] font-semibold px-6 py-3 rounded shadow hover:bg-[#d4af37] hover:text-white transition text-base sm:text-lg"
+            >View Listings</a
+          >
+        </div>
+      </div>
+    </section>
+
+    <!-- About Section (Modern Split Layout + AOS + Image) -->
+    <section
+      id="about-vision"
+      class="py-20 bg-gradient-to-br from-[#f8fafc] to-[#d4af37]/10 dark:from-gray-900 dark:to-[#1e40af]/30 transition-colors duration-500"
+    >
+      <div
+        class="max-w-6xl mx-auto px-6 grid md:grid-cols-2 gap-16 items-center"
+      >
+        <!-- Left: Text Content -->
+        <div data-aos="fade-right" class="relative">
+          <span
+            class="absolute -top-8 left-0 w-16 h-1 bg-gradient-to-r from-[#1e40af] to-[#d4af37] dark:from-[#d4af37] dark:to-[#1e40af] rounded-full"
+          ></span>
+          <h2
+            class="text-4xl md:text-5xl font-extrabold mb-6 text-transparent bg-clip-text bg-gradient-to-r from-[#1e40af] to-[#d4af37] dark:from-[#d4af37] dark:to-[#1e40af] drop-shadow-lg"
+          >
+            Our Vision
+          </h2>
+          <p
+            class="text-lg md:text-xl text-gray-700 dark:text-gray-200 leading-relaxed mb-8"
+          >
+            At
+            <span class="font-bold text-[#1e40af] dark:text-[#d4af37]"
+              >LuxEstate</span
+            >, we believe in more than just selling properties—we believe in
+            building dreams and communities. Our mission is to redefine luxury
+            living by offering exceptional service, exclusive listings, and a
+            seamless experience for every client.
+          </p>
+          <div class="space-y-6">
+            <div class="flex items-start gap-4 group">
+              <div
+                class="flex-shrink-0 bg-[#1e40af]/10 dark:bg-[#d4af37]/10 rounded-full p-2 group-hover:scale-110 transition-transform"
+              >
+                <img
+                  src="/assets/favicon-32x32.png"
+                  class="h-8"
+                  alt="Trust Icon"
+                />
+              </div>
+              <div>
+                <h4
+                  class="font-semibold text-[#1e40af] dark:text-[#d4af37] mb-1"
+                >
+                  Trust & Integrity
+                </h4>
+                <p class="text-sm text-gray-600 dark:text-gray-300">
+                  We are committed to transparency and honesty in every
+                  transaction.
+                </p>
+              </div>
+            </div>
+            <div class="flex items-start gap-4 group">
+              <div
+                class="flex-shrink-0 bg-[#1e40af]/10 dark:bg-[#d4af37]/10 rounded-full p-2 group-hover:scale-110 transition-transform"
+              >
+                <img
+                  src="https://cdn-icons-png.flaticon.com/512/190/190423.png"
+                  class="h-8"
+                  alt="Excellence Icon"
+                />
+              </div>
+              <div>
+                <h4
+                  class="font-semibold text-[#1e40af] dark:text-[#d4af37] mb-1"
+                >
+                  Excellence
+                </h4>
+                <p class="text-sm text-gray-600 dark:text-gray-300">
+                  Our team strives for excellence in service, marketing, and
+                  results.
+                </p>
+              </div>
+            </div>
+            <div class="flex items-start gap-4 group">
+              <div
+                class="flex-shrink-0 bg-[#1e40af]/10 dark:bg-[#d4af37]/10 rounded-full p-2 group-hover:scale-110 transition-transform"
+              >
+                <img
+                  src="https://cdn-icons-png.flaticon.com/512/190/190421.png"
+                  class="h-8"
+                  alt="Service Icon"
+                />
+              </div>
+              <div>
+                <h4
+                  class="font-semibold text-[#1e40af] dark:text-[#d4af37] mb-1"
+                >
+                  Personalized Service
+                </h4>
+                <p class="text-sm text-gray-600 dark:text-gray-300">
+                  Every client receives tailored advice and support for their
+                  unique journey.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Right: Image with overlay and effect -->
+        <div
+          data-aos="fade-left"
+          class="relative flex items-center justify-center"
+        >
+          <div
+            class="absolute -inset-4 bg-gradient-to-tr from-[#1e40af]/10 to-[#d4af37]/10 dark:from-[#d4af37]/20 dark:to-[#1e40af]/20 rounded-3xl blur-xl z-0"
+          ></div>
+          <div
+            class="rounded-2xl overflow-hidden shadow-2xl border-4 border-white dark:border-gray-900 relative z-10 group"
+          >
+            <img
+              src="images/team.jpg"
+              alt="Agency Team"
+              class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+            />
+            <div
+              class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent p-4 text-left"
+            >
+              <span class="text-white text-lg font-semibold tracking-wide"
+                >Meet the Team</span
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- How It Works Section -->
+    <section class="py-16 bg-gray-50 dark:bg-gray-900" data-aos="fade-up">
+      <div class="max-w-6xl mx-auto px-4">
+        <h2
+          class="text-3xl font-bold text-center mb-10 text-[#1e40af] dark:text-[#d4af37]"
+        >
+          How It Works
+        </h2>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div
+            class="flex flex-col items-center text-center p-6 rounded-xl shadow-md bg-white dark:bg-gray-800 hover:scale-105 transition-transform duration-300"
+          >
+            <img
+              src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png"
+              alt="Browse"
+              class="h-14 mb-4"
+            />
+            <h3 class="font-semibold mb-2">Browse Listings</h3>
+            <p class="text-gray-600 dark:text-gray-300">
+              Explore our curated selection of luxury properties tailored to
+              your needs.
+            </p>
+          </div>
+          <div
+            class="flex flex-col items-center text-center p-6 rounded-xl shadow-md bg-white dark:bg-gray-800 hover:scale-105 transition-transform duration-300"
+          >
+            <img
+              src="https://cdn-icons-png.flaticon.com/512/1256/1256650.png"
+              alt="Connect"
+              class="h-14 mb-4"
+            />
+            <h3 class="font-semibold mb-2">Connect with Agents</h3>
+            <p class="text-gray-600 dark:text-gray-300">
+              Get personalized guidance from our expert agents every step of the
+              way.
+            </p>
+          </div>
+          <div
+            class="flex flex-col items-center text-center p-6 rounded-xl shadow-md bg-white dark:bg-gray-800 hover:scale-105 transition-transform duration-300"
+          >
+            <img
+              src="https://cdn-icons-png.flaticon.com/512/190/190411.png"
+              alt="Move In"
+              class="h-14 mb-4"
+            />
+            <h3 class="font-semibold mb-2">Move In</h3>
+            <p class="text-gray-600 dark:text-gray-300">
+              Enjoy a seamless closing process and move into your dream home
+              with ease.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Featured Properties -->
+    <section id="listings" class="py-16 bg-gray-50 dark:bg-gray-900">
+      <div class="max-w-7xl mx-auto px-4">
+        <h2
+          class="text-3xl font-bold text-center mb-10 text-[#1e40af] dark:text-[#d4af37]"
+        >
+          Featured Properties
+        </h2>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+          <!-- Property Card 1 -->
+          <div
+            class="bg-white dark:bg-gray-800 rounded-xl shadow-lg overflow-hidden hover:scale-105 transition-transform duration-300 group"
+            data-aos="slide-up"
+          >
+            <img
+              src="https://images.unsplash.com/photo-1512918728675-ed5a9ecdebfd?auto=format&fit=crop&w=400&q=80"
+              alt="Luxury Villa"
+              class="w-full h-48 object-cover group-hover:brightness-90 transition"
+            />
+            <div class="p-5">
+              <h3 class="font-semibold text-xl mb-2">Modern Villa</h3>
+              <p
+                class="text-[#1e40af] dark:text-[#d4af37] font-bold text-lg mb-2"
+              >
+                $2,500,000
+              </p>
+              <ul class="flex gap-4 text-gray-600 dark:text-gray-300 mb-4">
+                <li>4 Beds</li>
+                <li>3,500 sq.ft</li>
+                <li>Pool</li>
+              </ul>
+              <a
+                href="#"
+                class="inline-block bg-[#1e40af] text-white px-4 py-2 rounded hover:bg-[#d4af37] hover:text-[#1e40af] transition view-details-btn"
+                data-title="Modern Villa"
+                data-price="$2,500,000"
+                data-img="https://images.unsplash.com/photo-1512918728675-ed5a9ecdebfd?auto=format&fit=crop&w=400&q=80"
+                data-features="4 Beds, 3,500 sq.ft, Pool"
+                data-description="A stunning modern villa with open floor plan, private pool, and luxury finishes throughout. Perfect for families seeking comfort and style."
+                >View Details</a
+              >
+            </div>
+          </div>
+          <!-- Property Card 2 -->
+          <div
+            class="bg-white dark:bg-gray-800 rounded-xl shadow-lg overflow-hidden hover:scale-105 transition-transform duration-300 group"
+            data-aos="slide-up"
+          >
+            <img
+              src="images/city.jpg"
+              alt="City Apartment"
+              class="w-full h-48 object-cover group-hover:brightness-90 transition"
+            />
+            <div class="p-5">
+              <h3 class="font-semibold text-xl mb-2">City Apartment</h3>
+              <p
+                class="text-[#1e40af] dark:text-[#d4af37] font-bold text-lg mb-2"
+              >
+                $950,000
+              </p>
+              <ul class="flex gap-4 text-gray-600 dark:text-gray-300 mb-4">
+                <li>2 Beds</li>
+                <li>1,200 sq.ft</li>
+                <li>No Pool</li>
+              </ul>
+              <a
+                href="#"
+                class="inline-block bg-[#1e40af] text-white px-4 py-2 rounded hover:bg-[#d4af37] hover:text-[#1e40af] transition view-details-btn"
+                data-title="City Apartment"
+                data-price="$950,000"
+                data-img="https://images.unsplash.com/photo-1464983953574-0892a716854b?auto=format&fit=crop&w=400&q=80"
+                data-features="2 Beds, 1,200 sq.ft, No Pool"
+                data-description="A chic city apartment with skyline views, modern kitchen, and easy access to downtown amenities. Ideal for urban professionals."
+                >View Details</a
+              >
+            </div>
+          </div>
+          <!-- Property Card 3 -->
+          <div
+            class="bg-white dark:bg-gray-800 rounded-xl shadow-lg overflow-hidden hover:scale-105 transition-transform duration-300 group"
+            data-aos="slide-up"
+          >
+            <img
+              src="https://images.unsplash.com/photo-1507089947368-19c1da9775ae?auto=format&fit=crop&w=400&q=80"
+              alt="Beach House"
+              class="w-full h-48 object-cover group-hover:brightness-90 transition"
+            />
+            <div class="p-5">
+              <h3 class="font-semibold text-xl mb-2">Beach House</h3>
+              <p
+                class="text-[#1e40af] dark:text-[#d4af37] font-bold text-lg mb-2"
+              >
+                $3,200,000
+              </p>
+              <ul class="flex gap-4 text-gray-600 dark:text-gray-300 mb-4">
+                <li>5 Beds</li>
+                <li>4,000 sq.ft</li>
+                <li>Pool</li>
+              </ul>
+              <a
+                href="#"
+                class="inline-block bg-[#1e40af] text-white px-4 py-2 rounded hover:bg-[#d4af37] hover:text-[#1e40af] transition view-details-btn"
+                data-title="Beach House"
+                data-price="$3,200,000"
+                data-img="https://images.unsplash.com/photo-1507089947368-19c1da9775ae?auto=format&fit=crop&w=400&q=80"
+                data-features="5 Beds, 4,000 sq.ft, Pool"
+                data-description="A breathtaking beach house with panoramic ocean views, direct beach access, and a private pool. The ultimate in coastal luxury."
+                >View Details</a
+              >
+            </div>
+          </div>
+          <!-- Property Card 4 -->
+          <div
+            class="bg-white dark:bg-gray-800 rounded-xl shadow-lg overflow-hidden hover:scale-105 transition-transform duration-300 group"
+            data-aos="slide-up"
+          >
+            <img
+              src="https://images.unsplash.com/photo-1523217582562-09d0def993a6?auto=format&fit=crop&w=400&q=80"
+              alt="Penthouse"
+              class="w-full h-48 object-cover group-hover:brightness-90 transition"
+            />
+            <div class="p-5">
+              <h3 class="font-semibold text-xl mb-2">Luxury Penthouse</h3>
+              <p
+                class="text-[#1e40af] dark:text-[#d4af37] font-bold text-lg mb-2"
+              >
+                $4,800,000
+              </p>
+              <ul class="flex gap-4 text-gray-600 dark:text-gray-300 mb-4">
+                <li>6 Beds</li>
+                <li>5,500 sq.ft</li>
+                <li>Pool</li>
+              </ul>
+              <a
+                href="#"
+                class="inline-block bg-[#1e40af] text-white px-4 py-2 rounded hover:bg-[#d4af37] hover:text-[#1e40af] transition view-details-btn"
+                data-title="Luxury Penthouse"
+                data-price="$4,800,000"
+                data-img="https://images.unsplash.com/photo-1523217582562-09d0def993a6?auto=format&fit=crop&w=400&q=80"
+                data-features="6 Beds, 5,500 sq.ft, Pool"
+                data-description="A top-floor penthouse with floor-to-ceiling windows, private elevator, and rooftop pool. Experience city living at its finest."
+                >View Details</a
+              >
+            </div>
+          </div>
+          <!-- Property Card 5 -->
+          <div
+            class="bg-white dark:bg-gray-800 rounded-xl shadow-lg overflow-hidden hover:scale-105 transition-transform duration-300 group hidden lg:block"
+            data-aos="slide-up"
+          >
+            <img
+              src="images/village.jpg"
+              alt="Country House"
+              class="w-full h-48 object-cover group-hover:brightness-90 transition"
+            />
+            <div class="p-5">
+              <h3 class="font-semibold text-xl mb-2">Country House</h3>
+              <p
+                class="text-[#1e40af] dark:text-[#d4af37] font-bold text-lg mb-2"
+              >
+                $1,750,000
+              </p>
+              <ul class="flex gap-4 text-gray-600 dark:text-gray-300 mb-4">
+                <li>3 Beds</li>
+                <li>2,800 sq.ft</li>
+                <li>Garden</li>
+              </ul>
+              <a
+                href="#"
+                class="inline-block bg-[#1e40af] text-white px-4 py-2 rounded hover:bg-[#d4af37] hover:text-[#1e40af] transition view-details-btn"
+                data-title="Country House"
+                data-price="$1,750,000"
+                data-img="https://images.unsplash.com/photo-1465101046530-73398c7f28ca?auto=format&fit=crop&w=400&q=80"
+                data-features="3 Beds, 2,800 sq.ft, Garden"
+                data-description="A peaceful country house surrounded by nature, with a large garden and cozy interiors. Perfect for those seeking tranquility."
+                >View Details</a
+              >
+            </div>
+          </div>
+          <!-- Property Card 6 -->
+          <div
+            class="bg-white dark:bg-gray-800 rounded-xl shadow-lg overflow-hidden hover:scale-105 transition-transform duration-300 group hidden lg:block"
+            data-aos="slide-up"
+          >
+            <img
+              src="https://images.unsplash.com/photo-1519974719765-e6559eac2575?auto=format&fit=crop&w=400&q=80"
+              alt="Modern Loft"
+              class="w-full h-48 object-cover group-hover:brightness-90 transition"
+            />
+            <div class="p-5">
+              <h3 class="font-semibold text-xl mb-2">Modern Loft</h3>
+              <p
+                class="text-[#1e40af] dark:text-[#d4af37] font-bold text-lg mb-2"
+              >
+                $1,200,000
+              </p>
+              <ul class="flex gap-4 text-gray-600 dark:text-gray-300 mb-4">
+                <li>2 Beds</li>
+                <li>1,500 sq.ft</li>
+                <li>City View</li>
+              </ul>
+              <a
+                href="#"
+                class="inline-block bg-[#1e40af] text-white px-4 py-2 rounded hover:bg-[#d4af37] hover:text-[#1e40af] transition view-details-btn"
+                data-title="Modern Loft"
+                data-price="$1,200,000"
+                data-img="https://images.unsplash.com/photo-1519974719765-e6559eac2575?auto=format&fit=crop&w=400&q=80"
+                data-features="2 Beds, 1,500 sq.ft, City View"
+                data-description="A stylish modern loft with open living space, high ceilings, and stunning city views. Ideal for creatives and professionals."
+                >View Details</a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Property Details Modal -->
+    <div
+      id="property-modal"
+      class="fixed inset-0 z-[999] flex items-center justify-center bg-black/60 dark:bg-black/80 backdrop-blur-sm hidden transition-all duration-300"
+    >
+      <div
+        class="relative bg-white dark:bg-gray-900 rounded-2xl shadow-2xl max-w-lg w-full mx-4 p-6 md:p-8 animate-fadeInUp scale-95 opacity-0 pointer-events-none transition-all duration-300"
+        tabindex="-1"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="modal-title"
+      >
+        <button
+          id="modal-close"
+          class="absolute top-4 right-4 text-gray-400 hover:text-[#1e40af] dark:hover:text-[#d4af37] text-2xl focus:outline-none"
+          aria-label="Close"
+        >
+          <i class="fa-solid fa-xmark"></i>
+        </button>
+        <img
+          id="modal-img"
+          src=""
+          alt="Property Image"
+          class="rounded-xl w-full h-48 object-cover mb-4 shadow"
+        />
+        <h3
+          id="modal-title"
+          class="text-2xl font-bold mb-2 text-[#1e40af] dark:text-[#d4af37]"
+        ></h3>
+        <p
+          id="modal-price"
+          class="text-lg font-semibold mb-2 text-[#d4af37] dark:text-[#1e40af]"
+        ></p>
+        <ul
+          id="modal-features"
+          class="flex flex-wrap gap-3 text-gray-600 dark:text-gray-300 mb-4 text-sm"
+        ></ul>
+        <p
+          id="modal-description"
+          class="text-gray-700 dark:text-gray-200 mb-4"
+        ></p>
+        <button
+          id="modal-contact"
+          class="w-full bg-[#1e40af] text-white font-semibold py-3 rounded hover:bg-[#d4af37] hover:text-[#1e40af] transition text-lg mt-2"
+        >
+          Contact Agent
+        </button>
+      </div>
+    </div>
+
+    <!-- Why Choose Us -->
+    <section id="about" class="py-16 bg-white dark:bg-gray-800">
+      <div class="max-w-6xl mx-auto px-4">
+        <h2
+          class="text-3xl font-bold text-center mb-10 text-[#1e40af] dark:text-[#d4af37]"
+        >
+          Why Choose Us
+        </h2>
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+          <div
+            class="flex flex-col items-center text-center p-6 rounded-xl shadow-md bg-gray-50 dark:bg-gray-900 hover:scale-105 transition-transform duration-300"
+            data-aos="fade-right"
+          >
+            <img
+              src="https://cdn-icons-png.flaticon.com/512/190/190411.png"
+              alt="Trust"
+              class="h-12 mb-4"
+            />
+            <h3 class="font-semibold mb-2">Trusted Agency</h3>
+            <p class="text-gray-600 dark:text-gray-300">
+              Over 20 years of experience and thousands of happy clients.
+            </p>
+          </div>
+          <div
+            class="flex flex-col items-center text-center p-6 rounded-xl shadow-md bg-gray-50 dark:bg-gray-900 hover:scale-105 transition-transform duration-300"
+            data-aos="fade-right"
+            data-aos-delay="100"
+          >
+            <img
+              src="https://cdn-icons-png.flaticon.com/512/190/190406.png"
+              alt="Expert Agents"
+              class="h-12 mb-4"
+            />
+            <h3 class="font-semibold mb-2">Expert Agents</h3>
+            <p class="text-gray-600 dark:text-gray-300">
+              Professional, certified, and dedicated to your needs.
+            </p>
+          </div>
+          <div
+            class="flex flex-col items-center text-center p-6 rounded-xl shadow-md bg-gray-50 dark:bg-gray-900 hover:scale-105 transition-transform duration-300"
+            data-aos="fade-right"
+            data-aos-delay="200"
+          >
+            <img
+              src="https://cdn-icons-png.flaticon.com/512/190/190422.png"
+              alt="Support"
+              class="h-12 mb-4"
+            />
+            <h3 class="font-semibold mb-2">24/7 Support</h3>
+            <p class="text-gray-600 dark:text-gray-300">
+              Always available to answer your questions and concerns.
+            </p>
+          </div>
+          <div
+            class="flex flex-col items-center text-center p-6 rounded-xl shadow-md bg-gray-50 dark:bg-gray-900 hover:scale-105 transition-transform duration-300"
+            data-aos="fade-right"
+            data-aos-delay="300"
+          >
+            <img
+              src="https://cdn-icons-png.flaticon.com/512/190/190423.png"
+              alt="Satisfaction"
+              class="h-12 mb-4"
+            />
+            <h3 class="font-semibold mb-2">Customer Satisfaction</h3>
+            <p class="text-gray-600 dark:text-gray-300">
+              Our clients rate us 4.9/5 for service and results.
+            </p>
+          </div>
+        </div>
+        <div class="mt-12 grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div
+            class="flex flex-col items-center text-center p-6 rounded-xl shadow-md bg-gray-50 dark:bg-gray-900 hover:scale-105 transition-transform duration-300"
+            data-aos="fade-up"
+            data-aos-delay="400"
+          >
+            <img
+              src="https://cdn-icons-png.flaticon.com/512/190/190420.png"
+              alt="Transparency"
+              class="h-12 mb-4"
+            />
+            <h3 class="font-semibold mb-2">Transparency</h3>
+            <p class="text-gray-600 dark:text-gray-300">
+              Clear communication and honest advice at every step.
+            </p>
+          </div>
+          <div
+            class="flex flex-col items-center text-center p-6 rounded-xl shadow-md bg-gray-50 dark:bg-gray-900 hover:scale-105 transition-transform duration-300"
+            data-aos="fade-up"
+            data-aos-delay="500"
+          >
+            <img
+              src="https://cdn-icons-png.flaticon.com/512/190/190421.png"
+              alt="Tailored Service"
+              class="h-12 mb-4"
+            />
+            <h3 class="font-semibold mb-2">Tailored Service</h3>
+            <p class="text-gray-600 dark:text-gray-300">
+              We listen to your needs and deliver a personalized experience.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="py-16 bg-gray-50 dark:bg-gray-900">
+      <div class="max-w-4xl mx-auto px-4">
+        <h2
+          class="text-3xl font-bold text-center mb-10 text-[#1e40af] dark:text-[#d4af37]"
+        >
+          What Our Clients Say
+        </h2>
+        <div class="flex flex-col md:flex-row gap-8 justify-center">
+          <!-- Testimonial Card 1 -->
+          <div
+            class="bg-white dark:bg-gray-800 rounded-xl shadow-lg p-8 flex-1 flex flex-col items-center"
+            data-aos="fade-up"
+          >
+            <img
+              src="https://randomuser.me/api/portraits/women/44.jpg"
+              alt="Client 1"
+              class="h-16 w-16 rounded-full mb-4"
+            />
+            <p class="italic mb-4 text-center">
+              “LuxEstate made buying our dream home a breeze. The team was
+              professional and attentive throughout.”
+            </p>
+            <span class="font-semibold text-[#1e40af] dark:text-[#d4af37]"
+              >Sarah M.</span
+            >
+          </div>
+          <!-- Testimonial Card 2 -->
+          <div
+            class="bg-white dark:bg-gray-800 rounded-xl shadow-lg p-8 flex-1 flex flex-col items-center"
+            data-aos="fade-up"
+            data-aos-delay="100"
+          >
+            <img
+              src="https://randomuser.me/api/portraits/men/32.jpg"
+              alt="Client 2"
+              class="h-16 w-16 rounded-full mb-4"
+            />
+            <p class="italic mb-4 text-center">
+              “Excellent service and great listings. I found the perfect
+              apartment in no time!”
+            </p>
+            <span class="font-semibold text-[#1e40af] dark:text-[#d4af37]"
+              >James K.</span
+            >
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Team Section -->
+    <section class="py-16 bg-white dark:bg-gray-800">
+      <div class="max-w-6xl mx-auto px-4">
+        <h2
+          class="text-3xl font-bold text-center mb-10 text-[#1e40af] dark:text-[#d4af37]"
+        >
+          Meet Our Team
+        </h2>
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8">
+          <!-- Team Member 1 -->
+          <div
+            class="flex flex-col items-center text-center bg-gray-50 dark:bg-gray-900 rounded-xl p-6 shadow-md"
+            data-aos="fade-up"
+          >
+            <img
+              src="https://randomuser.me/api/portraits/men/45.jpg"
+              alt="Agent 1"
+              class="h-20 w-20 rounded-full mb-4"
+            />
+            <h3 class="font-semibold mb-1">John Carter</h3>
+            <span class="text-sm text-gray-500 dark:text-gray-400 mb-2"
+              >Lead Agent</span
+            >
+            <p class="text-gray-600 dark:text-gray-300 text-sm">
+              15+ years experience, luxury specialist.
+            </p>
+          </div>
+          <!-- Team Member 2 -->
+          <div
+            class="flex flex-col items-center text-center bg-gray-50 dark:bg-gray-900 rounded-xl p-6 shadow-md"
+            data-aos="fade-up"
+            data-aos-delay="100"
+          >
+            <img
+              src="https://randomuser.me/api/portraits/women/65.jpg"
+              alt="Agent 2"
+              class="h-20 w-20 rounded-full mb-4"
+            />
+            <h3 class="font-semibold mb-1">Emily Stone</h3>
+            <span class="text-sm text-gray-500 dark:text-gray-400 mb-2"
+              >Senior Agent</span
+            >
+            <p class="text-gray-600 dark:text-gray-300 text-sm">
+              Expert in city apartments and penthouses.
+            </p>
+          </div>
+          <!-- Team Member 3 -->
+          <div
+            class="flex flex-col items-center text-center bg-gray-50 dark:bg-gray-900 rounded-xl p-6 shadow-md"
+            data-aos="fade-up"
+            data-aos-delay="200"
+          >
+            <img
+              src="https://randomuser.me/api/portraits/men/52.jpg"
+              alt="Agent 3"
+              class="h-20 w-20 rounded-full mb-4"
+            />
+            <h3 class="font-semibold mb-1">Michael Lee</h3>
+            <span class="text-sm text-gray-500 dark:text-gray-400 mb-2"
+              >Agent</span
+            >
+            <p class="text-gray-600 dark:text-gray-300 text-sm">
+              Specialist in family homes and villas.
+            </p>
+          </div>
+          <!-- Team Member 4 -->
+          <div
+            class="flex flex-col items-center text-center bg-gray-50 dark:bg-gray-900 rounded-xl p-6 shadow-md"
+            data-aos="fade-up"
+            data-aos-delay="300"
+          >
+            <img
+              src="https://randomuser.me/api/portraits/women/43.jpg"
+              alt="Agent 4"
+              class="h-20 w-20 rounded-full mb-4"
+            />
+            <h3 class="font-semibold mb-1">Sophia Brown</h3>
+            <span class="text-sm text-gray-500 dark:text-gray-400 mb-2"
+              >Client Relations</span
+            >
+            <p class="text-gray-600 dark:text-gray-300 text-sm">
+              Ensures a smooth and friendly experience.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section
+      class="py-16 bg-gradient-to-r from-[#1e40af] to-[#d4af37] dark:from-[#d4af37] dark:to-[#1e40af]"
+    >
+      <div class="max-w-4xl mx-auto px-4 text-center">
+        <h2 class="text-3xl font-bold text-white dark:text-[#1e40af] mb-4">
+          Ready to Find Your Dream Home?
+        </h2>
+        <p class="text-lg text-white/90 dark:text-[#1e40af]/90 mb-8">
+          Contact our expert team today and start your journey to luxury living.
+        </p>
+        <a
+          href="#contact"
+          class="inline-block bg-white dark:bg-[#1e40af] text-[#1e40af] dark:text-[#d4af37] font-semibold px-8 py-4 rounded shadow hover:bg-[#d4af37] hover:text-white dark:hover:bg-white dark:hover:text-[#1e40af] transition text-lg"
+          >Get in Touch</a
+        >
+      </div>
+    </section>
+
+    <!-- Interactive Map Section (static image placeholder) -->
+    <section class="py-16 bg-white dark:bg-gray-800">
+      <div class="max-w-6xl mx-auto px-4">
+        <h2
+          class="text-3xl font-bold text-center mb-10 text-[#1e40af] dark:text-[#d4af37]"
+        >
+          Explore Our Locations
+        </h2>
+        <div
+          class="rounded-xl overflow-hidden shadow-lg bg-gray-100 dark:bg-gray-900 flex justify-center items-center"
+        >
+          <img
+            src="images/map.jpg"
+            alt="Map"
+            class="w-full h-64 object-cover"
+          />
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="py-16 bg-gray-50 dark:bg-gray-900">
+      <div class="max-w-4xl mx-auto px-4">
+        <h2
+          class="text-3xl font-bold text-center mb-10 text-[#1e40af] dark:text-[#d4af37]"
+        >
+          Frequently Asked Questions
+        </h2>
+        <div class="space-y-6">
+          <!-- FAQ Item 1 -->
+          <div
+            class="bg-white dark:bg-gray-800 rounded-xl shadow p-6"
+            data-aos="fade-up"
+          >
+            <h3 class="font-semibold mb-2">
+              How do I schedule a property visit?
+            </h3>
+            <p class="text-gray-600 dark:text-gray-300">
+              Simply use the 'Schedule a Visit' button or contact us directly
+              through the form. Our agents will reach out to arrange a
+              convenient time.
+            </p>
+          </div>
+          <!-- FAQ Item 2 -->
+          <div
+            class="bg-white dark:bg-gray-800 rounded-xl shadow p-6"
+            data-aos="fade-up"
+            data-aos-delay="100"
+          >
+            <h3 class="font-semibold mb-2">Do you offer virtual tours?</h3>
+            <p class="text-gray-600 dark:text-gray-300">
+              Yes, we offer high-quality virtual tours for most properties. Ask
+              your agent for details.
+            </p>
+          </div>
+          <!-- FAQ Item 3 -->
+          <div
+            class="bg-white dark:bg-gray-800 rounded-xl shadow p-6"
+            data-aos="fade-up"
+            data-aos-delay="200"
+          >
+            <h3 class="font-semibold mb-2">What areas do you serve?</h3>
+            <p class="text-gray-600 dark:text-gray-300">
+              We serve all major neighborhoods in the city and surrounding
+              areas. See our map above for more details.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Newsletter Signup Section -->
+    <section class="py-16 bg-white dark:bg-gray-800">
+      <div class="max-w-2xl mx-auto px-4 text-center">
+        <h2 class="text-3xl font-bold mb-4 text-[#1e40af] dark:text-[#d4af37]">
+          Stay Updated
+        </h2>
+        <p class="mb-6 text-gray-600 dark:text-gray-300">
+          Subscribe to our newsletter for the latest listings, news, and
+          exclusive offers.
+        </p>
+        <form
+          class="flex flex-col sm:flex-row gap-4 justify-center items-center"
+        >
+          <input
+            type="email"
+            required
+            placeholder="Your email address"
+            class="w-full sm:w-auto flex-1 px-4 py-3 rounded border border-gray-300 dark:border-gray-700 bg-transparent focus:ring-2 focus:ring-[#1e40af] dark:focus:ring-[#d4af37] outline-none transition"
+          />
+          <button
+            type="submit"
+            class="bg-[#1e40af] text-white font-semibold px-6 py-3 rounded hover:bg-[#d4af37] hover:text-[#1e40af] transition"
+          >
+            Subscribe
+          </button>
+        </form>
+      </div>
+    </section>
+
+    <!-- Contact Form -->
+    <section id="contact" class="py-16 bg-white dark:bg-gray-800">
+      <div class="max-w-3xl mx-auto px-4">
+        <h2
+          class="text-3xl font-bold text-center mb-10 text-[#1e40af] dark:text-[#d4af37]"
+        >
+          Contact Us
+        </h2>
+        <form
+          id="contact-form"
+          class="bg-gray-50 dark:bg-gray-900 rounded-xl shadow-lg p-8 grid gap-6"
+          data-aos="fade-up"
+          novalidate
+        >
+          <!-- Name Field -->
+          <div class="relative">
+            <input
+              type="text"
+              id="name"
+              name="name"
+              required
+              class="peer w-full px-4 py-3 rounded border border-gray-300 dark:border-gray-700 bg-transparent focus:ring-2 focus:ring-[#1e40af] dark:focus:ring-[#d4af37] outline-none transition"
+              placeholder=" "
+              aria-label="Name"
+            />
+            <label
+              for="name"
+              class="absolute left-4 top-3 text-gray-500 dark:text-gray-400 transition-all peer-placeholder-shown:top-3 peer-placeholder-shown:text-base peer-focus:-top-4 peer-focus:text-sm peer-focus:text-[#1e40af] dark:peer-focus:text-[#d4af37] bg-gray-50 dark:bg-gray-900 px-1"
+              >Name</label
+            >
+            <span class="text-red-500 text-xs hidden" id="name-error"
+              >Please enter your name.</span
+            >
+          </div>
+          <!-- Email Field -->
+          <div class="relative">
+            <input
+              type="email"
+              id="email"
+              name="email"
+              required
+              class="peer w-full px-4 py-3 rounded border border-gray-300 dark:border-gray-700 bg-transparent focus:ring-2 focus:ring-[#1e40af] dark:focus:ring-[#d4af37] outline-none transition"
+              placeholder=" "
+              aria-label="Email"
+            />
+            <label
+              for="email"
+              class="absolute left-4 top-3 text-gray-500 dark:text-gray-400 transition-all peer-placeholder-shown:top-3 peer-placeholder-shown:text-base peer-focus:-top-4 peer-focus:text-sm peer-focus:text-[#1e40af] dark:peer-focus:text-[#d4af37] bg-gray-50 dark:bg-gray-900 px-1"
+              >Email</label
+            >
+            <span class="text-red-500 text-xs hidden" id="email-error"
+              >Please enter a valid email.</span
+            >
+          </div>
+          <!-- Phone Field -->
+          <div class="relative">
+            <input
+              type="tel"
+              id="phone"
+              name="phone"
+              required
+              class="peer w-full px-4 py-3 rounded border border-gray-300 dark:border-gray-700 bg-transparent focus:ring-2 focus:ring-[#1e40af] dark:focus:ring-[#d4af37] outline-none transition"
+              placeholder=" "
+              aria-label="Phone"
+            />
+            <label
+              for="phone"
+              class="absolute left-4 top-3 text-gray-500 dark:text-gray-400 transition-all peer-placeholder-shown:top-3 peer-placeholder-shown:text-base peer-focus:-top-4 peer-focus:text-sm peer-focus:text-[#1e40af] dark:peer-focus:text-[#d4af37] bg-gray-50 dark:bg-gray-900 px-1"
+              >Phone</label
+            >
+            <span class="text-red-500 text-xs hidden" id="phone-error"
+              >Please enter your phone number.</span
+            >
+          </div>
+          <!-- Message Field -->
+          <div class="relative">
+            <textarea
+              id="message"
+              name="message"
+              required
+              rows="4"
+              class="peer w-full px-4 py-3 rounded border border-gray-300 dark:border-gray-700 bg-transparent focus:ring-2 focus:ring-[#1e40af] dark:focus:ring-[#d4af37] outline-none transition resize-none"
+              placeholder=" "
+              aria-label="Message"
+            ></textarea>
+            <label
+              for="message"
+              class="absolute left-4 top-3 text-gray-500 dark:text-gray-400 transition-all peer-placeholder-shown:top-3 peer-placeholder-shown:text-base peer-focus:-top-4 peer-focus:text-sm peer-focus:text-[#1e40af] dark:peer-focus:text-[#d4af37] bg-gray-50 dark:bg-gray-900 px-1"
+              >Message</label
+            >
+            <span class="text-red-500 text-xs hidden" id="message-error"
+              >Please enter your message.</span
+            >
+          </div>
+          <!-- Submit Button -->
+          <button
+            type="submit"
+            class="bg-[#1e40af] text-white font-semibold px-6 py-3 rounded hover:bg-[#d4af37] hover:text-[#1e40af] transition"
+          >
+            Submit
+          </button>
+        </form>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer
+      class="bg-[#1e40af] dark:bg-[#1e40af] text-white dark:text-[#d4af37] pt-12 pb-6 mt-16 shadow-2xl border-t-4 border-[#d4af37] dark:border-[#d4af37] relative overflow-hidden"
+    >
+      <div
+        class="max-w-7xl mx-auto px-4 flex flex-col md:flex-row justify-between items-center gap-10 md:gap-6"
+      >
+        <!-- Contact Us -->
+        <div class="flex flex-col items-start gap-3 mb-8 md:mb-0">
+          <div class="flex items-center gap-3 mb-2">
+            <img
+              src="assets/logo.jpg"
+              alt="Agency Logo"
+              class="h-10 w-10 rounded-full shadow-lg ring-2 ring-[#d4af37] dark:ring-[#d4af37]"
+            />
+            <span
+              class="font-extrabold text-2xl tracking-tight bg-gradient-to-r from-[#d4af37] to-[#fff] bg-clip-text text-transparent"
+              >LuxEstate</span
+            >
+          </div>
+          <span class="text-base font-semibold tracking-wide">Contact Us</span>
+          <div
+            class="flex flex-col gap-1 text-sm text-white/90 dark:text-[#d4af37]/90"
+          >
+            <span
+              ><i class="fa-solid fa-location-dot mr-1"></i>123 Dream Ave,
+              Beverly Hills, CA</span
+            >
+            <span><i class="fa-solid fa-phone mr-1"></i>(555) 123-4567</span>
+            <span
+              ><i class="fa-solid fa-envelope mr-1"></i>info@luxestate.com</span
+            >
+          </div>
+        </div>
+        <!-- Navigation Links -->
+        <ul
+          class="flex flex-col md:flex-row gap-4 md:gap-8 font-medium text-lg items-center"
+        >
+          <li>
+            <a
+              href="#home"
+              class="hover:underline hover:text-[#d4af37] transition"
+              >Home</a
+            >
+          </li>
+          <li>
+            <a
+              href="#listings"
+              class="hover:underline hover:text-[#d4af37] transition"
+              >Listings</a
+            >
+          </li>
+          <li>
+            <a
+              href="#about"
+              class="hover:underline hover:text-[#d4af37] transition"
+              >About</a
+            >
+          </li>
+          <li>
+            <a
+              href="#contact"
+              class="hover:underline hover:text-[#d4af37] transition"
+              >Contact</a
+            >
+          </li>
+        </ul>
+        <!-- Socials & Powered By -->
+        <div class="flex flex-col items-end gap-4">
+          <div class="flex gap-4 mb-2">
+            <a
+              href="#"
+              aria-label="Facebook"
+              class="hover:text-[#d4af37] transition"
+              ><svg class="h-7 w-7" fill="currentColor" viewBox="0 0 24 24">
+                <path
+                  d="M22 12c0-5.522-4.478-10-10-10S2 6.478 2 12c0 4.991 3.657 9.128 8.438 9.877v-6.987h-2.54v-2.89h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.242 0-1.632.771-1.632 1.562v1.875h2.773l-.443 2.89h-2.33v6.987C18.343 21.128 22 16.991 22 12z"
+                /></svg
+            ></a>
+            <a
+              href="#"
+              aria-label="Twitter"
+              class="hover:text-[#d4af37] transition"
+              ><svg class="h-7 w-7" fill="currentColor" viewBox="0 0 24 24">
+                <path
+                  d="M22.46 6c-.77.35-1.6.59-2.46.69a4.3 4.3 0 0 0 1.88-2.37 8.59 8.59 0 0 1-2.72 1.04A4.28 4.28 0 0 0 16.11 4c-2.37 0-4.29 1.92-4.29 4.29 0 .34.04.67.11.99C7.69 9.09 4.07 7.38 1.64 4.89c-.37.64-.58 1.39-.58 2.19 0 1.51.77 2.84 1.95 3.62-.72-.02-1.4-.22-1.99-.55v.06c0 2.11 1.5 3.87 3.5 4.27-.36.1-.74.16-1.13.16-.28 0-.54-.03-.8-.08.54 1.68 2.12 2.9 3.99 2.93A8.6 8.6 0 0 1 2 19.54a12.13 12.13 0 0 0 6.56 1.92c7.88 0 12.2-6.53 12.2-12.2 0-.19 0-.37-.01-.56A8.72 8.72 0 0 0 24 4.59a8.5 8.5 0 0 1-2.54.7z"
+                /></svg
+            ></a>
+            <a
+              href="#"
+              aria-label="Instagram"
+              class="hover:text-[#d4af37] transition"
+              ><svg class="h-7 w-7" fill="currentColor" viewBox="0 0 24 24">
+                <path
+                  d="M12 2.2c3.2 0 3.584.012 4.85.07 1.17.056 1.97.24 2.43.41.59.22 1.01.48 1.45.92.44.44.7.86.92 1.45.17.46.354 1.26.41 2.43.058 1.266.07 1.65.07 4.85s-.012 3.584-.07 4.85c-.056 1.17-.24 1.97-.41 2.43-.22.59-.48 1.01-.92 1.45-.44.44-.86.7-1.45.92-.46.17-1.26.354-2.43.41C8.416 2.212 8.8 2.2 12 2.2zm0-2.2C8.736 0 8.332.012 7.052.07 5.77.128 4.87.31 4.13.54c-.77.24-1.42.56-2.07 1.21-.65.65-.97 1.3-1.21 2.07-.23.74-.412 1.64-.47 2.92C.012 8.332 0 8.736 0 12c0 3.264.012 3.668.07 4.948.058 1.28.24 2.18.47 2.92.24.77.56 1.42 1.21 2.07.65.65 1.3.97 2.07 1.21.74.23 1.64.412 2.92.47C8.332 23.988 8.736 24 12 24s3.668-.012 4.948-.07c1.28-.058 2.18-.24 2.92-.47.77-.24 1.42-.56 2.07-1.21.65-.65.97-1.3 1.21-2.07.23-.74.412-1.64.47-2.92.058-1.28.07-1.684.07-4.948s-.012-3.668-.07-4.948c-.058-1.28-.24-2.18-.47-2.92-.24-.77-.56-1.42-1.21-2.07-.65-.65-1.3-.97-2.07-1.21-.74-.23-1.64-.412-2.92-.47C15.668.012 15.264 0 12 0zm0 5.838A6.162 6.162 0 1 0 18.162 12 6.162 6.162 0 0 0 12 5.838zm0 10.162A4 4 0 1 1 16 12a4 4 0 0 1-4 4zm6.406-11.845a1.44 1.44 0 1 0 1.44 1.44 1.44 1.44 0 0 0-1.44-1.44z"
+                /></svg
+            ></a>
+          </div>
+          <div
+            class="text-xs md:text-sm text-white/80 dark:text-[#d4af37]/80 flex flex-col items-end"
+          >
+            <span>&copy; 2025 LuxEstate. All rights reserved.</span>
+            <span class="mt-1"
+              >Powered by
+              <a
+                href="https://codecraftbysyed-portfolio.vercel.app/"
+                target="_blank"
+                rel="noopener"
+                class="underline font-semibold hover:text-[#d4af37] transition"
+                >CodeCraft by Syed</a
+              ></span
+            >
+          </div>
+        </div>
+      </div>
+      <!-- Decorative SVG Wave -->
+      <div
+        class="absolute left-0 right-0 bottom-0 -z-1 pointer-events-none select-none"
+      >
+        <svg
+          viewBox="0 0 1440 100"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+          class="w-full h-16 md:h-24"
+        >
+          <path
+            d="M0 0h1440v40c-120 40-360 60-720 60S120 80 0 40V0z"
+            fill="currentColor"
+            class="text-white dark:text-[#d4af37] opacity-20"
+          />
+        </svg>
+      </div>
+    </footer>
+
+    <!-- AOS JS -->
+    <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+    <!-- Main JS -->
+    <script src="js/main.js"></script>
+  </body>
+</html>
