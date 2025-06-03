@@ -30,7 +30,7 @@ A modern, mobile-first, and fully responsive real estate agency landing page bui
 
 ## 📸 Demo
 
-![Landing Page Screenshot](assets/screenshot.png)
+![Landing Page Screenshot](assets/Screenshot.png)
 
 > **This is a demo landing page.**
 >
