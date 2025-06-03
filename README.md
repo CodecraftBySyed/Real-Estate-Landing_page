@@ -44,7 +44,7 @@ A modern, mobile-first, and fully responsive real estate agency landing page bui
 
 1. **Clone the repository:**
    ```bash
-   git clone https://github.com/yourusername/real-estate-landing.git
+   git clone https://github.com/CodecraftBySyed/Real-Estate-Landing_page.git
    ```
 2. **Open `index.html` in your browser.**
 3. No build step required. All dependencies are loaded via CDN.
